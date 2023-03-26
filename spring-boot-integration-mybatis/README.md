@@ -1,0 +1,14 @@
+# 说明
+采用spring-mybatis + com.github.pagehelper
+
+student,student_course_ref类 采用xml的方式实现crud。测试方法都在XmlMyBatisTest中。
+这个实体使用pageHelper实现分页。使用MyBatis推荐的batch insert方法实现批量插入。自定义枚举处理器，实现枚举类的类型转换。在xml中查询中分别展示了1对1查询，和1对多查询
+
+teacher,teacher_course_ref类，采用接口的方式实现crud。测试方法都在InterfaceMyBatisTest中。
+这个实体，接口sql，使用普通的insert select标签，也使用SelectProvider这种动态sql。在接口查询中分别展示了1对1查询和1对多查询。
+
+course类，采用接口方法实现crud。测试方法都在InterfaceMyBatisTest中。
+这个实体使用自定义Interceptor来实现sql执行时，动态生成创建时间和更新时间。
+
+address类，增加这个类为了实现展示查询的1对1。
+
